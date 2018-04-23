@@ -18,6 +18,16 @@ namespace TruckMyFoodCore.Infrastructure
 
             conection = new SQLiteConnection(path);
             conection.CreateTable<User>();
+
+            this.MockUsers();
+        }
+        
+        private void MockUsers()
+        {
+            foreach(var user in new MockUsers().MockLoginUsers())
+            {
+                this.IsertUser(user);
+            }
         }
 
         public User GetUser(string email)
@@ -25,9 +35,24 @@ namespace TruckMyFoodCore.Infrastructure
             return conection.Table<User>().Where(a => a.Email == email).FirstOrDefault();
         }
 
-        public void IsertUser(User user)
+        public bool IsertUser(User user)
         {
-            conection.Insert(user);
+            var registredUser = this.GetUser(user.Email);
+            if (registredUser == null)
+            {
+                conection.Insert(user);
+                return true;
+            }
+            if (this.IsMockedUser(user.Email) == true) { return true; }
+            return false;
+        }
+
+        private bool IsMockedUser(string email)
+        {
+            return email == "teste@teste.com" ||
+                   email == "teste1@teste.com" ||
+                   email == "teste2@teste.com" ||
+                   email == "teste3@teste.com";
         }
     }
 }

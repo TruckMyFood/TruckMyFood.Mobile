@@ -4,9 +4,29 @@
              x:Class="TruckMyFoodCore.View.FoodTruckOwnerInformation">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <RelativeLayout>
+                <Image Source="" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+            </RelativeLayout>
+            <StackLayout Margin="30">
+                <Entry x:Name="TradingName" Placeholder="Nome fantasia" Text="{Binding TradingName}" IsEnabled="False" BackgroundColor="White" WidthRequest="60" />
+                <Entry x:Name="Cnpj" Placeholder="Cnpj" Text="{Binding FormattedCnpj}" IsEnabled="False" Keyboard="Numeric" BackgroundColor="White" WidthRequest="60" />
+                <Entry x:Name="Email" Placeholder="Email" Text="{Binding Email}" Keyboard="Email" BackgroundColor="White" WidthRequest="60" />
+                <Entry x:Name="FoodTruckSpeciality" Placeholder="Tipo de comida" Text="{Binding FoodTruckSpeciality}" BackgroundColor="White" WidthRequest="60" />
+                <Editor x:Name="Descrption" Text="{Binding Descrption}" BackgroundColor="White" HeightRequest="100" WidthRequest="60" />
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Column="0" Grid.Row="0" Text="Voltar" BorderRadius="8" BackgroundColor="White" BorderColor="Black" BorderWidth="1" Clicked="Cancel" />
+                    <Button Grid.Column="1" Grid.Row="0" Text="Salvar" BorderRadius="8" TextColor="White" BackgroundColor="#2db731" Clicked="SaveChanges" />
+                </Grid>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

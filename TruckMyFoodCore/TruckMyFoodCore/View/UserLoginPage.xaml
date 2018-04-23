@@ -4,10 +4,11 @@
              x:Class="TruckMyFoodCore.View.UserLoginPage">
     <ContentPage.Content>
         <StackLayout Padding="30">
-            <Entry  Placeholder="Email" IsPassword="False" Keyboard="Email" BackgroundColor="White" WidthRequest="60" />
-            <Entry  Placeholder="Senha" IsPassword="True" BackgroundColor="White"/>
+            <Image Source="logoTruckMyFood.png" VerticalOptions="CenterAndExpand" Margin="0, 18, 0, 18" />
+            <Entry x:Name="Email" Placeholder="Email" IsPassword="False" Keyboard="Email" WidthRequest="60" />
+            <Entry x:Name="Password" Placeholder="Senha" IsPassword="True" />
 
-            <Grid>
+            <Grid Margin="0, 18, 0, 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -16,12 +17,13 @@
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
 
-                <Button Grid.Column="0" Grid.Row="0" Text="Criar conta" BorderRadius="8" Clicked="CreateUserAccount" />
-                <Button Grid.Column="1" Grid.Row="0" Text="Login" BorderRadius="8" Clicked="LogUser" />
+                <Button Grid.Column="0" Grid.Row="0" Text="Criar conta" BorderRadius="8" BackgroundColor="White" BorderColor="Black" BorderWidth="1" Clicked="CreateUserAccount" />
+                <Button Grid.Column="1" Grid.Row="0" Text="Login" BorderRadius="8" TextColor="White" BackgroundColor="#2db731" Clicked="LogUser" />
             </Grid>
 
-            <Image Source="facebookLogin.png" />
-            <Button Text="Meu Food Truck" HeightRequest="65" BorderRadius="8" Image="van.png" HorizontalOptions="CenterAndExpand" Clicked="LoginWithFoodTruckAccount" />
+            <BoxView HeightRequest="175"/>
+
+            <Button Text="Meu Food Truck" HeightRequest="50" BorderRadius="8" Image="van.png" TextColor="White" BackgroundColor="#a2209a" Margin="18,0,18,0" Clicked="LoginWithFoodTruckAccount" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

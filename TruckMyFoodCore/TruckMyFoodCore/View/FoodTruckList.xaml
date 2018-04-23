@@ -24,7 +24,30 @@
                 <Button Grid.Column="2" Grid.Row="0" BackgroundColor="White" Image="placeholder.png" Text="Mapa" Clicked="ShowFoodTruckMap" />
             </Grid>
 
-            <ListView x:Name="FoodTruckDetailList">
+            <ListView x:Name="FoodTruckDetailList" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="200" />
+                                    <RowDefinition Height="50" />
+                                    <RowDefinition Height="50" />
+                                </Grid.RowDefinitions>
+
+                                <Image Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Source="" VerticalOptions="Fill" />
+                                <Label Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Text="{Binding TradingName}" Margin="15,0,0,0" FontSize="Large" FontAttributes="Bold" TextColor="#a2209a" />
+                                <Label Grid.Column="0" Grid.ColumnSpan="1" Grid.Row="2" Text="{Binding FoodTruckSpeciality}" VerticalTextAlignment="Center" Margin="15,0,0,0" />
+                                <Button Grid.Column="2" Grid.Row="2" Text="+ Detalhes" Margin="5" TextColor="White" BackgroundColor="#2db731" BorderRadius="8" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
     </ContentPage.Content>

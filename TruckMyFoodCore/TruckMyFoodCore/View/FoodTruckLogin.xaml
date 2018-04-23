@@ -4,10 +4,11 @@
              x:Class="TruckMyFoodCore.View.FoodTruckLogin">
     <ContentPage.Content>
         <StackLayout Padding="30">
-            <Entry  Placeholder="CNPJ" IsPassword="False" Keyboard="Email" BackgroundColor="White" WidthRequest="60" />
-            <Entry  Placeholder="Senha" IsPassword="True" BackgroundColor="White"/>
+            <Image Source="logoTruckMyFood.png" VerticalOptions="FillAndExpand" Margin="0, 18, 0, 18" />
+            <Entry x:Name="Cnpj" Placeholder="CNPJ" IsPassword="False" Keyboard="Numeric" WidthRequest="60" />
+            <Entry x:Name="Password" Placeholder="Senha" IsPassword="True" />
 
-            <Grid>
+            <Grid Margin="0, 18, 0, 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
@@ -16,12 +17,13 @@
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
 
-                <Button Grid.Column="0" Grid.Row="0" Text="Criar conta" BorderRadius="8" Clicked="CreateFoodTruckAccount" />
-                <Button Grid.Column="1" Grid.Row="0" Text="Login" BorderRadius="8" Clicked="LogUser" />
+                <Button Grid.Column="0" Grid.Row="0" Text="Criar conta" BorderRadius="8" BackgroundColor="White" BorderColor="Black" BorderWidth="1" Clicked="CreateFoodTruckAccount" />
+                <Button Grid.Column="1" Grid.Row="0" Text="Login" BorderRadius="8" TextColor="White" BackgroundColor="#2db731" Clicked="LogUser" />
             </Grid>
 
-            <Button Text="Voltar" HeightRequest="65" BorderRadius="8" Image="deliveryTruck.png" HorizontalOptions="CenterAndExpand" Clicked="BackToUserLoginPage" />
+            <BoxView HeightRequest="175"/>
 
+            <Button Text="Voltar" HeightRequest="50" BorderRadius="8" Image="van.png" TextColor="White" BackgroundColor="#a2209a" Margin="18,0,18,0" Clicked="BackToUserLoginPage" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

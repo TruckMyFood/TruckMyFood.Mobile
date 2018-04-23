@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TruckMyFoodCore.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,11 +12,14 @@ namespace TruckMyFoodCore.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FoodTruckList : ContentPage
 	{
-		public FoodTruckList ()
+        private FoodTruckListViewModel foodTruckListViewModel;
+        public FoodTruckList ()
 		{
 			InitializeComponent ();
 
+            this.foodTruckListViewModel = new FoodTruckListViewModel();
             
+            FoodTruckDetailList.ItemsSource = this.foodTruckListViewModel.GetFoodTruckList();
         }
 
         public void ShowFoodTruckMap(Object sender, EventArgs args)

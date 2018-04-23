@@ -16,14 +16,14 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60" />
+                    <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
 
                 <Button Grid.Column="0" Grid.Row="0" Image="filter.png" BackgroundColor="White" Text="Filtros" Clicked="OpenFilters" />
                 <Button Grid.Column="2" Grid.Row="0" Image="placeholder.png" BackgroundColor="White" Text="Lista" Clicked="ShowFoodTruckList" />
             </Grid>
 
-            <StackLayout x:Name="MapArea">
+            <StackLayout x:Name="MapArea" VerticalOptions="FillAndExpand">
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

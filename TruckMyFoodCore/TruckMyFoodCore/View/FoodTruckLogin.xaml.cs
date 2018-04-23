@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TruckMyFoodCore.Model.Users;
+using TruckMyFoodCore.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,9 +13,13 @@ namespace TruckMyFoodCore.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class FoodTruckLogin : ContentPage
 	{
-		public FoodTruckLogin ()
+        private FoodTruckLoginViewModel foodTruckLoginVM;
+
+        public FoodTruckLogin ()
 		{
 			InitializeComponent ();
+
+            this.foodTruckLoginVM = new FoodTruckLoginViewModel();
 		}
 
         private void CreateFoodTruckAccount(Object sender, EventArgs arngs)
@@ -29,7 +34,31 @@ namespace TruckMyFoodCore.View
 
         private void LogUser(Object sender, EventArgs arngs)
         {
-            App.Current.MainPage = new NavigationPage(new FoodTruckOwnerPage());
+            if (IsvalidUser() == true)
+            {
+                var foodTruck = new FoodTruck()
+                {
+                    Cnpj = Cnpj.Text,
+                    Password = Password.Text
+                };
+
+                if (this.foodTruckLoginVM.LogFoodTruck(foodTruck) == true)
+                {
+                    App.Current.MainPage = new NavigationPage(new FoodTruckOwnerPage(foodTruck));
+                }
+                else
+                {
+                    DisplayAlert("Alerta", "Usuário ou senha errados.", "OK");
+                }
+            }
+        }
+
+        private bool IsvalidUser()
+        {
+            if (Cnpj.Text == null) { DisplayAlert("Alerta", "O Cnpj está vazio", "OK"); return false; }
+            if (Password.Text == null) { DisplayAlert("Alerta", "O senha está vazia", "OK"); return false; }
+
+            return true;
         }
     }
 }

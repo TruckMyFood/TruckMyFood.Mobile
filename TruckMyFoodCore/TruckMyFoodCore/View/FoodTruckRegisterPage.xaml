@@ -4,11 +4,12 @@
              x:Class="TruckMyFoodCore.View.FoodTruckRegisterPage">
     <ContentPage.Content>
         <StackLayout Padding="30">
-            <Entry  Placeholder="Nome Fantasia" IsPassword="False" BackgroundColor="White" />
-            <Entry  Placeholder="CNPJ" IsPassword="False" BackgroundColor="White" />
-            <Entry  Placeholder="Email" IsPassword="False" Keyboard="Email" BackgroundColor="White"/>
-            <Entry  Placeholder="Senha" IsPassword="True" BackgroundColor="White"/>
-            <Entry  Placeholder="Confirmar Senha" IsPassword="True" BackgroundColor="White"/>
+            <Image Source="logoTruckMyFood.png" VerticalOptions="CenterAndExpand" Margin="0, 18, 0, 18" />
+            <Entry x:Name="TradingName" Placeholder="Nome Fantasia" IsPassword="False" BackgroundColor="White" />
+            <Entry x:Name="Cnpj" Placeholder="CNPJ" IsPassword="False" Keyboard="Numeric" BackgroundColor="White" />
+            <Entry x:Name="Email" Placeholder="Email" IsPassword="False" Keyboard="Email" BackgroundColor="White"/>
+            <Entry x:Name="Password" Placeholder="Senha" IsPassword="True" BackgroundColor="White"/>
+            <Entry x:Name="ConfirmedPassword" Placeholder="Confirmar Senha" IsPassword="True" BackgroundColor="White"/>
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -19,8 +20,8 @@
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
 
-                <Button Grid.Column="0" Grid.Row="0" Text="Voltar" BorderRadius="8" Clicked="CloseModal" />
-                <Button Grid.Column="1" Grid.Row="0" Text="Cadastrar" BorderRadius="8" Clicked="CreateUser" />
+                <Button Grid.Column="0" Grid.Row="0" Text="Voltar" BorderRadius="8" BackgroundColor="White" BorderColor="Black" BorderWidth="1" Clicked="CloseModal" />
+                <Button Grid.Column="1" Grid.Row="0" Text="Cadastrar" TextColor="White" BackgroundColor="#2db731" BorderRadius="8" Clicked="CreateUser" />
 
             </Grid>
         </StackLayout>
