@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:TruckMyFoodCore.View"
+             x:Class="TruckMyFoodCore.View.FoodTruckList"
+             Title="Truck My Food"
+             BackgroundColor="White">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sair" Icon="" Clicked="Logout" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+
+                <Button Grid.Column="0" Grid.Row="0" BackgroundColor="White" Image="filter.png" Text="Filtros" Clicked="OpenFilters" />
+                <Button Grid.Column="2" Grid.Row="0" BackgroundColor="White" Image="placeholder.png" Text="Mapa" Clicked="ShowFoodTruckMap" />
+            </Grid>
+
+            <ListView x:Name="FoodTruckDetailList">
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

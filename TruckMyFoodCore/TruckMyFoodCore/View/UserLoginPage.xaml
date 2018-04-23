@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruckMyFoodCore.View.UserLoginPage">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Entry  Placeholder="Email" IsPassword="False" Keyboard="Email" BackgroundColor="White" WidthRequest="60" />
+            <Entry  Placeholder="Senha" IsPassword="True" BackgroundColor="White"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+
+                <Button Grid.Column="0" Grid.Row="0" Text="Criar conta" BorderRadius="8" Clicked="CreateUserAccount" />
+                <Button Grid.Column="1" Grid.Row="0" Text="Login" BorderRadius="8" Clicked="LogUser" />
+            </Grid>
+
+            <Image Source="facebookLogin.png" />
+            <Button Text="Meu Food Truck" HeightRequest="65" BorderRadius="8" Image="van.png" HorizontalOptions="CenterAndExpand" Clicked="LoginWithFoodTruckAccount" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

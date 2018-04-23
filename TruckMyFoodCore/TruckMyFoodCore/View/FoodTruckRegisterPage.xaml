@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruckMyFoodCore.View.FoodTruckRegisterPage">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Entry  Placeholder="Nome Fantasia" IsPassword="False" BackgroundColor="White" />
+            <Entry  Placeholder="CNPJ" IsPassword="False" BackgroundColor="White" />
+            <Entry  Placeholder="Email" IsPassword="False" Keyboard="Email" BackgroundColor="White"/>
+            <Entry  Placeholder="Senha" IsPassword="True" BackgroundColor="White"/>
+            <Entry  Placeholder="Confirmar Senha" IsPassword="True" BackgroundColor="White"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+
+                <Button Grid.Column="0" Grid.Row="0" Text="Voltar" BorderRadius="8" Clicked="CloseModal" />
+                <Button Grid.Column="1" Grid.Row="0" Text="Cadastrar" BorderRadius="8" Clicked="CreateUser" />
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

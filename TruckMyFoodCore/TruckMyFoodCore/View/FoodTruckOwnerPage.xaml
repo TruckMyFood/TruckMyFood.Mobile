@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruckMyFoodCore.View.FoodTruckOwnerPage"
+             Title="Truck My Food">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Sair" Icon="" Clicked="Logout"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+
+                <Label Text="Meu Food Truck" Grid.Column="0" Grid.Row="0" TextColor="#b5b1b5" />
+                <Button Grid.Column="2" Grid.Row="0" Image="" Text="Editar" Clicked="EditFoodtruckInformations" />
+            </Grid>
+
+            <StackLayout x:Name="MapArea">
+            </StackLayout>
+            <StackLayout>
+                <Button x:Name="FoodTruckStatus" Text="Abrir Food Truck" HeightRequest="65" BorderRadius="8"  HorizontalOptions="CenterAndExpand" Clicked="ChangeFoodTruckStatus" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

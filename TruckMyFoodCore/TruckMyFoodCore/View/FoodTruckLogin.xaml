@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TruckMyFoodCore.View.FoodTruckLogin">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Entry  Placeholder="CNPJ" IsPassword="False" Keyboard="Email" BackgroundColor="White" WidthRequest="60" />
+            <Entry  Placeholder="Senha" IsPassword="True" BackgroundColor="White"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+
+                <Button Grid.Column="0" Grid.Row="0" Text="Criar conta" BorderRadius="8" Clicked="CreateFoodTruckAccount" />
+                <Button Grid.Column="1" Grid.Row="0" Text="Login" BorderRadius="8" Clicked="LogUser" />
+            </Grid>
+
+            <Button Text="Voltar" HeightRequest="65" BorderRadius="8" Image="deliveryTruck.png" HorizontalOptions="CenterAndExpand" Clicked="BackToUserLoginPage" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
